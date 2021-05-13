@@ -1,0 +1,41 @@
+
+{% extends "projectWebApp/plantillaBase.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    {% for post in posts %}
+
+    <section class="cont">
+        <article class="cont_serv" style=" background-color: rgba(0, 0, 0, .6); margin-left:10%; margin-right: 10%; 
+        display:flex; margin-top: 20px; margin-bottom: 20px; color: azure;"> 
+
+            <div class="cont_img" style="width:45%; margin-right: 30px;">
+              <img class="img" src="{{post.imagen.url}}" style="width: 100%;">
+            </div>
+
+            <div class="cont_tex" style="width: 45%; align-items: center; margin-left:20px; margin-top: 10px;">
+              <h2><span>{{post.titulo}}</span></h2>
+              <p><span>{{post.contenido}}</span></p></br>
+              <p>Autor: {{post.autor}}</p>
+            </div>
+          </article>
+    </section>
+
+    {% endfor %}
+
+    <section class="cont">
+        <article class="cont_serv" style="margin-left:10%; margin-right:10%; padding-left: 10px;        
+        background-color: rgba(0, 0, 0, .6); display:flex; margin-top: 20px; margin-bottom: 20px; 
+        color: azure; padding-top: 10px; padding-bottom: 10px;font-size: 14pt;">
+            Categorias:
+            {% for post in posts %}
+                {% for categoria in post.categorias.all %}
+        <a style="padding-left: 5px;" href="{% url 'categoria' categoria.id %}">{{categoria.nombre}}</a"> &nbsp;
+                {% endfor %}
+            {% endfor %}
+        </article>
+    </section>
+
+{% endblock %}

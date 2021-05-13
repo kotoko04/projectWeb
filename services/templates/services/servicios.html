@@ -1,0 +1,26 @@
+{% extends "projectWebApp/plantillaBase.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    {% for servicio in servicios %}
+
+    <section class="cont">
+    <article class="cont_serv" style=" background-color: rgba(0, 0, 0, .6); margin-left:10%; margin-right: 10%; 
+    display:flex; margin-top: 20px; margin-bottom: 20px; color: azure;"> 
+    
+        <div class="cont_img" style="width:45%; margin-right: 30px;">
+          <img class="img" src="{{servicio.imagen.url}}" style="width: 100%;">
+        </div>
+
+        <div class="cont_tex" style="width: 45%; align-items: center; margin-left:20px; margin-top: 10px;">
+          <h2><span>{{servicio.titulo}}</span></h2>
+          <p><span>{{servicio.contenido}}</span></p>
+        </div>
+      </article>
+    </section>
+
+    {% endfor %}
+
+{% endblock %}

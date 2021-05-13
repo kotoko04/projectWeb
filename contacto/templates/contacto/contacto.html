@@ -1,0 +1,46 @@
+{% extends "projectWebApp/plantillaBase.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<section style=" background-size: cover; background-repeat: no-repeat; display: flex;
+flex-direction: column; align-items: center; justify-content: center; width: 100%; min-height: 100vh;
+padding: 20px;">
+
+    <article style=" display: flex; flex-direction: column; align-items: center; align-content: center;
+    width: 40% ; height: 100%; background-color: rgba(0, 0, 0, .3); border-radius: 5px;">
+        
+        <h3 style="color: seashell; text-align: center; font-size: 30px; margin-bottom: 20px; 
+        padding-top:20px;">Datos de Contacto</h3>
+
+        {% if "valido" in request.GET %}
+            <p>Informacion Enviada Correctamente</p>
+        {% endif %}
+    
+        <form action= "" method="POST" style="text-align: center;">
+            {% csrf_token %}
+
+                <div style="width: 100%; display: flex; padding: 7px 0; align-items: center; background-color: #fff;
+                opacity: .8; border-radius: 5px; margin-bottom: 5px;"><input style="border: 0; width: 90%; opacity: .8;
+                height: 30px; font-size: 20px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;
+                outline: 0px; background-color:rgba (225,225,225, .6); border: solid 2px rgba (225,225,225, .01);
+                color:#000; margin-left: 20px;" type="nombre" name="" value="nombre"></div>
+
+                <div style="width: 100%; display: flex; padding: 7px 0; align-items: center; background-color: #fff;
+                opacity: .8; border-radius: 5px; margin-bottom: 5px;"><input style="border: 0; width: 90%; opacity: .8;
+                height: 30px; font-size: 20px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;
+                outline: 0px; background-color:rgba (225,225,225, .6); border: solid 2px rgba (225,225,225, .01);
+                color:#000; margin-left: 20px;" type="email" name="" value="email"></div>
+
+               
+                <input type="submit" name="Enviar" value="Enviar" style="background-color: rgb(51, 51, 104);
+                height: 30%; font-size: 25px; border: 0; background: rgba(225,0,0,0); color: #fff;
+                margin-bottom: 40px; margin-top: 40px; width: 100%; border: 3px solid transparent; 
+                transition: .5s;">
+        </form>
+
+    </article>
+</section>
+
+{% endblock %}

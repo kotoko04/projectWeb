@@ -1,0 +1,40 @@
+{% extends "projectWebApp/plantillaBase.html" %}
+
+{% load static %}
+
+{% block content %}
+    <!-- Heading -->
+    <section style="display: flex;">
+          <div style=" width: 50%; margin-right: 30px; ">
+            <img style="width: 100%; border-radius: 2rem; padding-left: 40px; padding-top: 40px;" 
+            src="{% static 'projectWebApp/img/principal.jpg' %}">
+          </div>
+
+          <div style="width: 40%; margin-top: 3rem; background-color: rgba(0, 0, 0, .6); color: cornsilk;">
+            <h2 style="text-align: center; padding-top: 40px;" class="section-heading mb-4">
+              <span class="section-heading-upper">Puntualidad</span>
+              <span class="section-heading-lower">El mejor stock</span>
+            </h2>
+            <p style="text-align: justify; padding-left: 20px; padding-right: 20px;" class="mb-3">En la puertra de 
+              tu casa en menos de 48 h con el envío normal. En menos de 24 h con el envío express</p>
+          </div>
+  </section>
+
+    <!-- Message -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Compromiso total</span>
+                <span class="section-heading-lower">Garantizado</span>
+              </h2>
+              <p class="mb-0">Con más de 75 años de experiencia a nuestras espaldas, desde Gestión de Pedidos tenemos los conocimientos y herramientas necesarios para llevar cualquier objeto a la puerta de su casa con puntualidad y profesionalidad.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+{% endblock %}
